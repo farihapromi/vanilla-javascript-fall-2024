@@ -11,11 +11,13 @@ const handleButton = () => {
   const num2 = parseFloat(num2Input.value);
   // Validate input
   if (isNaN(num1) || isNaN(num2)) {
-    resultElement.textContent = "Please enter valid numbers.";
+    result.textContent = "Please enter valid numbers.";
     return;
   }
   if (num1 > num2) {
     result.innerText = `First Number is larger than Second Number`;
+  } else if (num1 === num2) {
+    result.innerText = `Two numbers are equal`;
   } else {
     result.innerText = `Second  Number is larger than  First Number`;
   }
