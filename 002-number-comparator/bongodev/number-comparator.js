@@ -3,6 +3,7 @@ const num1Input = document.getElementById("number1");
 const num2Input = document.getElementById("number2");
 const result = document.getElementById("result");
 const button = document.getElementById("compare");
+const resetBtn = document.getElementById("reset");
 
 const handleButton = () => {
   // Retrieve values from input fields
@@ -21,3 +22,7 @@ const handleButton = () => {
 };
 
 button.addEventListener("click", handleButton);
+resetBtn.addEventListener("click", () => {
+  num1Input.value = "";
+  num2Input.value = "";
+});
