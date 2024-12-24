@@ -71,16 +71,45 @@ const renderProducts = (products) => {
 const getProductNameComponent = (productName) => {
   const productNameComponent = document.createElement("h3");
   productNameComponent.className = "text-lg font-semibold";
+  productNameComponent.innerText = productName;
   return productNameComponent;
 };
-const getProductPriceComponent = () => {};
+const getProductPriceComponent = (productPrice) => {
+  const productPriceComponent = document.createElement("p");
+  productPriceComponent.className = "text-grey-700";
+  productPriceComponent.innerText = `$${productPrice}`;
+  return productPriceComponent;
+};
+const getProductImageComponent = (product) => {
+  const prodcutImageComponent = document.createElement("img");
+  prodcutImageComponent.className = "w-full mb-4";
+  prodcutImageComponent.src = product.image;
+  prodcutImageComponent.alt = product.name;
+  return prodcutImageComponent;
+};
+//add to cart button
+const getAddToCartBtn = () => {
+  const addToCartBtn = document.createElement("button");
+  addToCartBtn.className =
+    "bg-blue-500 hover:bg-blue-700 text-white font bold py-2 px-4 rounded mt-2";
+  addToCartBtn.innerText = "Add to Cart";
+
+  return addToCartBtn;
+};
 //Card function
 const getProductCard = (product) => {
   const productCard = document.createElement("div");
   productCard.className = "bg-white p-4 rounded shadow";
+  const productImageComponent = getProductImageComponent(product);
   const productNameComponent = getProductNameComponent(product.name);
   const productPriceComponent = getProductPriceComponent(product.price);
-  return productCard.append(productNameComponent, productPriceComponent);
+  const addToCartBtn = getAddToCartBtn();
+  productCard.append(
+    productImageComponent,
+    productNameComponent,
+    productPriceComponent,
+    addToCartBtn
+  );
   return productCard;
 };
 renderProducts(products);
