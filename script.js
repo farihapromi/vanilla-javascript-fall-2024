@@ -45,6 +45,12 @@ const contributors = [
     email: 'nazma.sarker1398@gmail.com',
   },
   {
+    name: 'Promi',
+    dirPath: 'promi',
+    email: 'farihapromi2611@gmail.com',
+  },
+
+  {
     name: 'Talha',
     dirPath: 'Talha',
     email: 'ameertalha22@gmail.com',
